@@ -159,6 +159,21 @@ Output will be
 </fragment>
 ```
 
+For optional arguments
+``` xml
+<fragment
+    android:id="@+id/employeeDetailsFragment"
+    android:name="com.example.navigationjetpacksample.fragments.EmployeeDetailsFragment"
+    android:label="EmployeeDetailsFragment"
+    tools:layout="@layout/frag_employee_details">
+    <argument
+        android:name="employee"
+        app:argType="com.example.navigationjetpacksample.models.Employee"
+        android:defaultValue="@null"
+        app:nullable="true"/>
+</fragment>
+```
+
 In your sending destination’s code
 ``` kotlin
 holder.itemBinding.root.setOnClickListener {
