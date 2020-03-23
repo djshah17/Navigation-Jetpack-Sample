@@ -2,6 +2,9 @@
 This is a navigation jetpack architecture components sample in kotlin.
 
 
+![alt text](https://raw.githubusercontent.com/djshah17/Navigation-Jetpack-Sample/master/navigation_graph.png)
+
+
 ## Add the below dependencies in your app level build.gradle file
 ``` gradle
 apply plugin: 'androidx.navigation.safeargs'
@@ -133,9 +136,9 @@ Output will be
 * Navigation.findNavController(View)
 
 ``` kotlin
-fab_add.setOnClickListener {
-            it.findNavController().navigate(R.id.addEmployeeFragment)
-}
+ fab_add.setOnClickListener {
+            it.findNavController().navigate(EmployeesListFragmentDirections.actionEmployeesListFragmentToAddEmployeeFragment())
+ }
 ```
 
 ## Pass data between destinations with Safe Args
