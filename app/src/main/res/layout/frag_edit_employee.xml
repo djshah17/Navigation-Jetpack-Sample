@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+    <variable
+        name="employee"
+        type="com.example.navigationjetpacksample.models.Employee" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/edt_first_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="25dp"
+            android:hint="Please enter first name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@{employee.firstName}"/>
+
+        <EditText
+            android:id="@+id/edt_last_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:hint="Please enter last name"
+            app:layout_constraintEnd_toEndOf="@+id/edt_first_name"
+            app:layout_constraintStart_toStartOf="@+id/edt_first_name"
+            app:layout_constraintTop_toBottomOf="@+id/edt_first_name"
+            android:text="@{employee.lastName}"/>
+
+        <EditText
+            android:id="@+id/edt_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:hint="Please enter email"
+            android:inputType="textEmailAddress"
+            app:layout_constraintEnd_toEndOf="@+id/edt_first_name"
+            app:layout_constraintStart_toStartOf="@+id/edt_first_name"
+            app:layout_constraintTop_toBottomOf="@+id/edt_last_name"
+            android:text="@{employee.email}"/>
+
+        <EditText
+            android:id="@+id/edt_phone_no"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:hint="Please enter email"
+            android:inputType="phone"
+            app:layout_constraintEnd_toEndOf="@+id/edt_first_name"
+            app:layout_constraintStart_toStartOf="@+id/edt_first_name"
+            app:layout_constraintTop_toBottomOf="@+id/edt_email"
+            android:text="@{employee.phoneNo}"/>
+
+        <EditText
+            android:id="@+id/edt_age"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:hint="Please enter age"
+            app:layout_constraintEnd_toEndOf="@+id/edt_first_name"
+            app:layout_constraintStart_toStartOf="@+id/edt_first_name"
+            app:layout_constraintTop_toBottomOf="@+id/edt_phone_no"
+            android:inputType="number"
+            android:text="@{employee.age}"/>
+
+        <EditText
+            android:id="@+id/edt_salary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:hint="Please enter salary"
+            app:layout_constraintEnd_toEndOf="@+id/edt_first_name"
+            app:layout_constraintStart_toStartOf="@+id/edt_first_name"
+            app:layout_constraintTop_toBottomOf="@+id/edt_age"
+            android:inputType="number"
+            android:text="@{employee.salary}"/>
+
+        <Button
+            android:id="@+id/btn_edit"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="50dp"
+            android:text="Submit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_salary" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+    <variable
+        name="employee"
+        type="com.example.navigationjetpacksample.models.Employee" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/txt_first_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="25dp"
+            android:text="@{`First Name: ` + employee.firstName}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_last_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@{`Last Name: ` + employee.lastName}"
+            app:layout_constraintEnd_toEndOf="@+id/txt_first_name"
+            app:layout_constraintStart_toStartOf="@+id/txt_first_name"
+            app:layout_constraintTop_toBottomOf="@+id/txt_first_name" />
+
+        <TextView
+            android:id="@+id/txt_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@{`Email: ` + employee.email}"
+            app:layout_constraintEnd_toEndOf="@+id/txt_first_name"
+            app:layout_constraintStart_toStartOf="@+id/txt_first_name"
+            app:layout_constraintTop_toBottomOf="@+id/txt_last_name" />
+
+        <TextView
+            android:id="@+id/txt_phone_no"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@{`Phone No: ` + employee.phoneNo}"
+            app:layout_constraintEnd_toEndOf="@+id/txt_first_name"
+            app:layout_constraintStart_toStartOf="@+id/txt_first_name"
+            app:layout_constraintTop_toBottomOf="@+id/txt_email" />
+
+        <TextView
+            android:id="@+id/txt_age"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintEnd_toEndOf="@+id/txt_first_name"
+            app:layout_constraintStart_toStartOf="@+id/txt_first_name"
+            app:layout_constraintTop_toBottomOf="@+id/txt_phone_no"
+            android:text="@{`Age: ` + employee.age}"/>
+
+        <TextView
+            android:id="@+id/txt_salary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@{`Salary: ` + employee.salary}"
+            app:layout_constraintEnd_toEndOf="@+id/txt_first_name"
+            app:layout_constraintStart_toStartOf="@+id/txt_first_name"
+            app:layout_constraintTop_toBottomOf="@+id/txt_age" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

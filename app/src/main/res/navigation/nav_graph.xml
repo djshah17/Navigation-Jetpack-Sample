@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/nav_graph"
+app:startDestination="@id/employeesListFragment">
+
+<fragment
+    android:id="@+id/employeesListFragment"
+    android:name="com.example.navigationjetpacksample.fragments.EmployeesListFragment"
+    android:label="EmployeesListFragment"
+    tools:layout="@layout/frag_employees_list">
+    <action
+        android:id="@+id/action_employeesListFragment_to_employeeDetailsFragment"
+        app:destination="@id/employeeDetailsFragment"
+        app:enterAnim="@anim/enter_from_right"
+        app:exitAnim="@anim/exit_to_left"
+        app:popEnterAnim="@anim/enter_from_left"
+        app:popExitAnim="@anim/exit_to_right"/>
+    <action
+        android:id="@+id/action_employeesListFragment_to_editEmployeeFragment"
+        app:destination="@id/editEmployeeFragment"
+        app:enterAnim="@anim/enter_from_right"
+        app:exitAnim="@anim/exit_to_left"
+        app:popEnterAnim="@anim/enter_from_left"
+        app:popExitAnim="@anim/exit_to_right"/>
+    <action
+        android:id="@+id/action_employeesListFragment_to_deleteEmployeeFragment"
+        app:destination="@id/deleteEmployeeFragment"
+        app:enterAnim="@anim/enter_from_right"
+        app:exitAnim="@anim/exit_to_left"
+        app:popEnterAnim="@anim/enter_from_left"
+        app:popExitAnim="@anim/exit_to_right"/>
+    <action
+        android:id="@+id/action_employeesListFragment_to_addEmployeeFragment"
+        app:destination="@id/addEmployeeFragment"
+        app:enterAnim="@anim/enter_from_right"
+        app:exitAnim="@anim/exit_to_left"
+        app:popEnterAnim="@anim/enter_from_left"
+        app:popExitAnim="@anim/exit_to_right"/>
+    <argument
+        android:name="employee"
+        app:argType="com.example.navigationjetpacksample.models.Employee"
+        android:defaultValue="@null"
+        app:nullable="true"/>
+    <argument
+        android:name="previousScreen"
+        app:argType="string"
+        android:defaultValue="@null"
+        app:nullable="true"/>
+</fragment>
+
+<fragment
+    android:id="@+id/addEmployeeFragment"
+    android:name="com.example.navigationjetpacksample.fragments.AddEmployeeFragment"
+    android:label="AddEmployeeFragment"
+    tools:layout="@layout/frag_add_employee">
+    <action
+        android:id="@+id/action_addEmployeeFragment_to_employeesListFragment"
+        app:destination="@id/employeesListFragment"
+        app:popUpTo="@id/employeesListFragment"
+        app:popUpToInclusive="true"
+        app:launchSingleTop="true" />
+</fragment>
+
+<fragment
+    android:id="@+id/employeeDetailsFragment"
+    android:name="com.example.navigationjetpacksample.fragments.EmployeeDetailsFragment"
+    android:label="EmployeeDetailsFragment"
+    tools:layout="@layout/frag_employee_details">
+    <argument
+        android:name="employee"
+        app:argType="com.example.navigationjetpacksample.models.Employee" />
+</fragment>
+
+<fragment
+    android:id="@+id/editEmployeeFragment"
+    android:name="com.example.navigationjetpacksample.fragments.EditEmployeeFragment"
+    android:label="EditEmployeeFragment"
+    tools:layout="@layout/frag_edit_employee">
+    <argument
+        android:name="employee"
+        app:argType="com.example.navigationjetpacksample.models.Employee" />
+    <action
+        android:id="@+id/action_editEmployeeFragment_to_employeesListFragment"
+        app:destination="@id/employeesListFragment"
+        app:enterAnim="@anim/enter_from_right"
+        app:exitAnim="@anim/exit_to_left"
+        app:launchSingleTop="true"
+        app:popUpTo="@id/employeesListFragment"
+        app:popUpToInclusive="true" />
+</fragment>
+
+<fragment
+    android:id="@+id/deleteEmployeeFragment"
+    android:name="com.example.navigationjetpacksample.fragments.DeleteEmployeeFragment"
+    android:label="DeleteEmployeeFragment"
+    tools:layout="@layout/frag_delete_employee">
+    <action
+        android:id="@+id/action_deleteEmployeeFragment_to_employeesListFragment2"
+        app:destination="@id/employeesListFragment"
+        app:popUpTo="@id/employeesListFragment"
+        app:popUpToInclusive="true"
+        app:launchSingleTop="true" />
+    <argument
+        android:name="employee"
+        app:argType="com.example.navigationjetpacksample.models.Employee" />
+</fragment>
+</navigation>
